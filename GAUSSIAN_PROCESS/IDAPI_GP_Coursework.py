@@ -42,6 +42,7 @@ def multivariateGaussianDraw(mean, cov):
 
     # Return drawn sample
     return sample
+
 # ##############################################################################
 # RadialBasisFunction for the kernel function
 # k(x,x') = s2_f*exp(-norm(x,x')^2/(2l^2)). If s2_n is provided, then s2_n is
@@ -84,6 +85,7 @@ class RadialBasisFunction():
     # then covMatrix computes the covariance matrix between all inputs in the
     # training and test set.
     # ##########################################################################
+
     def covMatrix(self, X, Xa=None):
         if Xa is not None:
             X_aug = np.zeros((X.shape[0]+Xa.shape[0], X.shape[1]))
@@ -114,6 +116,7 @@ class RadialBasisFunction():
         # Return computed covariance matrixm
         return covMat
 # print(pow(4,2))
+
 class GaussianProcessRegression():
     def __init__(self, X, y, k):
         self.X = X
